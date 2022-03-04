@@ -2,11 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// On importe le fichier admin que l'on va créer
+import Admin from './components/Admin';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        {/* On défini la route initial qui sera App*/}
+        <Route path="/" element={<App />} />
+        {/* On défini la route admin qui sera Admin*/}
+        <Route path="admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
